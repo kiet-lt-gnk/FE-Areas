@@ -1,9 +1,13 @@
 import { createStore } from "vuex";
+import * as user from "@/store/modules/user.js";
+import * as product from "stores/store/product";
 
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    user,
+    product,
+  },
+  state: {
+    onCheckedSidebar: false,
+  },
 });
