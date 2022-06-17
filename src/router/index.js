@@ -17,7 +17,7 @@ const routes = [
       {
         path: "home",
         component: DefaultHomeView,
-        redirect: { name: "home" },
+        redirect: { name: "tabledefault" },
         name: "home",
         children: [
           {
