@@ -14,9 +14,7 @@
       <header>My App</header>
       <ul>
         <li>
-          <router-link :to="{ name: 'defaultHome', params: {} }"
-            >HOME</router-link
-          >
+          <router-link to="/">HOME</router-link>
         </li>
         <li><a href="#">SHORTCUTS</a></li>
         <li><a href="#">OVERVIEW</a></li>

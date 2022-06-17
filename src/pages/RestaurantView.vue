@@ -12,7 +12,7 @@
   Number of movies: {{ numberOfMovies }}
 </template>
 <script>
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import MovieList from "@/components/MovieList.vue";
 import useMovies from "@/composable/useMovies";
 import UserLogin from "@/components/UserLogin.vue";
@@ -31,31 +31,8 @@ export default {
     const store = useStore();
     const { getNumberOfMovies } = useMovies();
     const isLoggedIn = computed(() => store.getters["user/getIsLoggedIn"]);
-    const arrays = ref([
-      {
-        text: "Link 1",
-        link: "/about",
-      },
-      {
-        text: "Link 2",
-        link: "/about",
-      },
-      {
-        text: "Link 3",
-        link: "/about",
-      },
-      {
-        text: "Link 4",
-        link: "/about",
-      },
-      {
-        text: "Link 5",
-        link: "/about",
-      },
-    ]);
 
     return {
-      arrays,
       isLoggedIn,
       numberOfMovies: getNumberOfMovies(),
     };

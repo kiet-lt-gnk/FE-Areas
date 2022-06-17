@@ -1,9 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar__container">
-      <router-link :to="{ name: 'defaultHome', params: {} }" id="navbar__logo"
-        >LOGO</router-link
-      >
+      <router-link to="/" id="navbar__logo">LOGO</router-link>
       <div
         class="navbar__toggle"
         id="mobile-menu"

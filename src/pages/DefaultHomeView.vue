@@ -7,14 +7,18 @@
     </template>
   </ContentHeader>
   <router-link :to="{ name: 'restaurant', params: {} }">Restaurant</router-link>
+  |
+  <router-link :to="{ name: 'tabledefault', params: {} }"
+    >Table Default</router-link
+  >
+  |
+  <router-link :to="{ name: 'restaurantdefault', params: {} }"
+    >Restaurant Default</router-link
+  >
   <div class="default_home_page--content">
     <!-- <Header /> -->
-    <TableComponent :labels="labels" :data="data" :isActions="true">
-      <template v-slot:actions="item">
-        <button @click="logItem(item)">Edit</button>
-        <button @click="logItem(item)">Delete</button>
-      </template>
-    </TableComponent>
+    <router-view :key="$route.path" />
+
     <!-- <Footer /> -->
   </div>
   <!-- <HelloWorld />
@@ -22,38 +26,10 @@
 </template>
 <script>
 import ContentHeader from "@/components/ContentHeader.vue";
-import TableComponent from "@/components/table/TableComponent.vue";
-// import Header from "home/Header";
-// import Footer from "home/Footer";
-// import HelloWorld from "none/HelloWorld";
-// import TestView from "router/TestView";
-import { ref } from "vue";
 export default {
   name: "DefaultHomeView",
   components: {
     ContentHeader,
-    TableComponent,
-    // Header,
-    // Footer,
-    // HelloWorld,
-    // TestView,
-  },
-  setup() {
-    const labels = ref([
-      { text: "ID", field: "id" },
-      { text: "Name", field: "name" },
-      { text: "Created", field: "date_created" },
-    ]);
-    const data = ref([
-      { id: 1, name: "Foo", date_created: "01.01.2021" },
-      { id: 2, name: "Bar", date_created: "01.01.2021" },
-    ]);
-
-    const logItem = (item) => {
-      console.log(item);
-    };
-
-    return { labels, data, logItem };
   },
 };
 </script>
