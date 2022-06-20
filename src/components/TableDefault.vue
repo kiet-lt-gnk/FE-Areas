@@ -22,8 +22,8 @@ export default {
       { text: "Created", field: "date_created" },
     ]);
     const data = ref([
-      { id: 1, name: "Foo", date_created: "01.01.2021" },
-      { id: 2, name: "Bar", date_created: "01.01.2021" },
+      { id: 1, name: "Foo", date_created: "20.06.2022" },
+      { id: 2, name: "Bar", date_created: "20.06.2022" },
     ]);
 
     const logItem = (item) => {
